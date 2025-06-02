@@ -962,8 +962,19 @@ body {
   }
 }
 
-/* ---------------------------------Min 1024px- Max 1280 (surface PRO 7 H)--------------------------------- */
 
+/* ---------------------------------Min 1024px- Max 1280 (IPAD PRO)--------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* ---------------------------------Min 1024px- Max 1280 (surface PRO 7 H)--------------------------------- */
 @media (min-width: 1024px) and (max-width: 1280px) {
   .hero-title-behind {
     font-size: 10rem;
