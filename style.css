@@ -1138,9 +1138,7 @@ body {
   }
 
   .icon-item small {
-    font-size: 0.7rem;
-    line-height: 1.2;
-    display: block;
+    display: none;
   }
    
   .sectors-grid,
