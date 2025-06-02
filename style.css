@@ -962,6 +962,25 @@ body {
   }
 }
 
+/* ---------------------------------Min 1024px- Max 1280 (surface PRO 7 H)--------------------------------- */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .hero-title-behind {
+    font-size: 8rem;
+  }
+}
+
+/* ---------------------------------Min 800px- Max 1024 (surface PRO 7 V)--------------------------------- */
+@media (min-width: 800px) and (max-width: 1024px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+    padding-block: 2rem;
+  }
+}
+
 /* ---------------------------------Máx 768px (pantallas tipo tablet vertical)--------------------------------- */
 @media (max-width: 768px) {
   .section-title {
