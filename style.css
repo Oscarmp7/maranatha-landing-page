@@ -1040,55 +1040,97 @@ body {
   }
 }
 
-/* Max 430px and 932px*/
-@media (max-width: 430px) and (max-height: 932px) {
-  /* HERO - Centrado completo */
-  .hero-center {
-    min-height: 100vh;
+/* Max 430px */
+@media (max-width: 430px) {
+  /* Estructura general */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    width: 100%;
+    gap: 3rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem 2rem;
+    background-position: center;
+    background-size: cover;
     text-align: center;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
   }
 
   .hero-title-line1 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {
     font-size: 1rem;
-    margin-top: 0.5rem;
-    max-width: 90%;
+    margin-top: 1rem;
+    padding: 0 1rem;
   }
 
   .hero-visual img {
-    max-width: 200px;
+    width: 140px;
     height: auto;
   }
 
-  .hero-title-behind {
-    font-size: 4rem; /* Ajusta la palabra 'PREMIUM' para que no se corte */
-    opacity: 0.08;
+  /* Secciones */
+  section.section {
+    padding: 3rem 1.2rem;
+    text-align: center;
   }
 
-  .btn-box a {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-  }
-
-  /* Ajustes generales */
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .section-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Icon grid, testimonios, catálogo */
+  .icons-grid,
+  .sectors-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-item {
+    padding: 1rem;
     font-size: 0.95rem;
   }
 
+  .catalog-mockup img {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Contacto */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .a-container a {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+
+  /* Footer */
   .footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -1097,7 +1139,17 @@ body {
   .footer-logo {
     max-width: 80px;
   }
+
+  .footer-column {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    padding-top: 1rem;
+  }
 }
+
 
 /* Max 375px */
 @media (max-width: 375px) {
