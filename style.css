@@ -1085,6 +1085,11 @@ body {
     height: auto;
   }
 
+  /* About */
+  .glass-about {
+    padding-inline: 1.5rem;
+  }
+
   /* Secciones */
   section.section {
     padding: 3rem 1.2rem;
@@ -1100,8 +1105,16 @@ body {
     padding: 0 1rem;
   }
 
+  .about .section-text {
+     text-align: justify;
+     line-height: 1.6;
+  }
+
   /* Icon grid, testimonios, catálogo */
-  .icons-grid,
+  .icons-grid {
+  gap: 2rem 1.5rem;
+  }
+   
   .sectors-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
@@ -1130,10 +1143,30 @@ body {
     font-size: 1.2rem;
   }
 
+  .contact-form {
+  padding-inline: 1.5rem;
+  max-width: 500px;
+  margin-inline: auto;
+  }
+
+  .contact-social {
+  padding-inline: 1.5rem;
+  }
+
+  .contact-grid {
+  gap: 2rem;
+  }
+
   /* Footer */
   .footer {
     text-align: center;
     padding: 2rem 1rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
   }
 
   .footer-logo {
@@ -1144,9 +1177,27 @@ body {
     margin-bottom: 1.5rem;
   }
 
+  .footer-column h4 {
+    margin-bottom: 0.5rem;
+  }
+
   .footer-copy {
     font-size: 0.8rem;
     padding-top: 1rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-icons a {
+    font-size: 1.4rem;
+    transition: transform 0.2s ease;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.15);
   }
 }
 
