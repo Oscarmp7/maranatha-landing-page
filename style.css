@@ -1324,33 +1324,8 @@ body {
   }
 
   .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: none;
+    margin: 0;
+    padding: 0;
   }
-
-  .footer-column h4 {
-    font-size: 1rem;
-  }
-
-  .footer-column p,
-  .footer-column a {
-    font-size: 0.9rem;
-  }
-
-  .social-icons a {
-    font-size: 1.2rem;
-    margin: 0 0.3rem;
-  }
-}
-
-  .btn,
-  .btn-outline {
-    width: 100%;
-  }
-
-  .img {
-    max-width: 100%;
-    height: auto;
-  }
 }
