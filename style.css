@@ -1122,7 +1122,7 @@ body {
 
   .icon-item {
     text-align: center;
-    padding: 0 0.5rem;
+    padding-block: 1.5rem;
   }
 
   .icon-item i {
@@ -1131,7 +1131,7 @@ body {
   }
 
   .icon-item p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     margin: 0.3rem 0 0.2rem;
     line-height: 1.2;
