@@ -1003,12 +1003,16 @@ body {
   .scrollspy {
     display: none;
   }
+
+ .hero-title-behind {
+    font-size: 8rem;
+  }
 }
 
 /* ---------------------------------Min 1024px- Max 1280 (surface PRO 7 H)--------------------------------- */
 @media (min-width: 1024px) and (max-width: 1280px) {
   .hero-title-behind {
-    font-size: 10rem;
+    font-size: 9.5rem;
   }
 }
 
