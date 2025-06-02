@@ -1074,6 +1074,10 @@ body {
     font-size: 2rem;
   }
 
+  .hero-title-behind {
+    font-size: 8rem;
+  }
+
   .hero-subtitle {
     font-size: 1rem;
     margin-top: 1rem;
