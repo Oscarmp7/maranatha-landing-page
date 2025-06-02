@@ -159,9 +159,10 @@
       Descarga nuestro catálogo con más de <strong>3,000 productos esenciales</strong> para empresas de todos los sectores.
     </p>
 
-    <a href="https://heyzine.com/flip-book/e5be2225ab.html" class="btn btn-outline" download>
+    <a href="https://heyzine.com/flip-book/e5be2225ab.html" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
       Explorar Catálogo
     </a>
+
     
     <p class="section-hint">
   ¿Tienes prisa? Te ayudamos a encontrarlo más rápido. <a href="#contact">Contáctanos</a>.
@@ -237,10 +238,12 @@
 
     <!-- Formulario -->
     <div class="form-glass">
-      <form class="contact-form">
+      <form action="https://formsubmit.co/info@suplidoramaranatha.com" method="POST" class="contact-form">
         <input type="text" name="name" placeholder="Nombre completo" required>
         <input type="email" name="email" placeholder="Correo electrónico" required>
         <textarea name="message" rows="4" placeholder="Tu mensaje" required></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://suplidoramaranatha.com/gracias.html"> <!-- Mensaje de gracias redireccionado -->
         <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
       </form>
     </div>
