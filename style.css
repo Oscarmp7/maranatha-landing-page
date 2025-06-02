@@ -1076,10 +1076,39 @@ body {
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+    text-align: center;
   }
 
   .footer-column {
-    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-logo {
+    max-width: 100px;
+    margin: 0 auto;
+  }
+
+  .footer-tagline,
+  .footer-line,
+  .footer-copy {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-links ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 0.2rem 0;
   }
 
   .btn,
@@ -1092,3 +1121,4 @@ body {
     height: auto;
   }
 }
+
