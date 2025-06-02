@@ -1222,18 +1222,12 @@ body {
 
   .footer-links {
     display: none;
+    margin: 0;
+    padding: 0;
   }
 
   .footer-logo {
     max-width: 100px;
-  }
-
-  .footer-column {
-    margin-bottom: 1.5rem;
-  }
-
-  .footer-column h4 {
-    margin-bottom: 0.5rem;
   }
 
   .footer-copy {
