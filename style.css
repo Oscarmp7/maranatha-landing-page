@@ -965,16 +965,43 @@ body {
 
 /* ---------------------------------Min 1024px- Max 1280 (IPAD PRO)--------------------------------- */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .nav-links {
-    display: none;
+    .nav-toggle {
+    display: block; /* Mostrar botón hamburguesa */
+    border:  1px solid var(--white);
+    border-radius: 8px;
+    padding: 0.5rem;
   }
 
-  .nav-toggle {
-    display: block;
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    background: rgba(10,10,99,0.95); /* Color institucional sobrio */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+    display: none; /* Oculto por defecto */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    transition: all 0.3s ease;
   }
 
   .nav-links.open {
     display: flex; /* Mostrar al hacer toggle */
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .scrollspy {
+    display: none;
   }
 }
 
