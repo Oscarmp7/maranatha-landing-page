@@ -972,6 +972,10 @@ body {
   .nav-toggle {
     display: block;
   }
+
+  .nav-links.open {
+    display: flex; /* Mostrar al hacer toggle */
+  }
 }
 
 /* ---------------------------------Min 1024px- Max 1280 (surface PRO 7 H)--------------------------------- */
