@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Comienza el documento HTML y establece el idioma a español -->
+<head>
+  <meta charset="UTF-8"> <!-- Codificación de caracteres en UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace la página responsive en móviles -->
+  <title>Suplidora MaranaTha – Tu socio de confianza en material de oficina</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <!-- === Google Fonts: Oswald para títulos y Poppins para el cuerpo === -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+   <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- === Enlace al archivo CSS principal === -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================================
+       GRID LAYOUT PRINCIPAL
+       ================================ -->
+  <div class="page-grid"> <!-- Contenedor Grid que estructura header, aside, main y footer -->
+
+    <!-- ================================
+         HEADER / NAVBAR (sticky + transparente al bajar)
+         ================================ -->
+    <header class="navbar"> <!-- Barra superior fija -->
+      <div class="container nav-container"> <!-- Contenedor interno para centrar y espaciado -->
+        <!-- Logo -->
+        <a href="#hero" class="logo"> <!-- Enlace al inicio de la página -->
+          <img
+            src="https://github.com/Oscarmp7/landing-maranatha-assets/blob/2b795d3cfe7cb584e8ec9d0c3a1c88dce1ecda69/assets/images/definitivo%20fondo%20oscuro%20(slogan).png?raw=true"
+            alt="Logo Suplidora MaranaTha"> <!-- Ruta al logo subido en GitHub -->
+        </a>
+        <!-- Enlaces de navegación -->
+        <nav class="nav-links"> <!-- Menú horizontal en escritorio -->
+          <a href="#hero">Inicio</a>         <!-- Enlace sección Hero -->
+          <a href="#about">¿Quiénes Somos?</a> <!-- Enlace sección About -->
+          <a href="#sectors">Sectores</a>    <!-- Enlace sección Sectors -->
+          <a href="#catalog">Catálogo</a>    <!-- Enlace sección Catalog -->
+          <a href="#testimonials">Testimonios</a> <!-- Enlace sección Testimonials -->
+          <a href="#contact">Contacto</a>    <!-- Enlace sección Contact -->
+        </nav>
+        <!-- Botón hamburguesa para móvil -->
+        <button class="nav-toggle"> <!-- Muestra/oculta menú en móviles -->
+          <i class="fas fa-bars"></i>      <!-- Icono de tres rayas -->
+        </button>
+      </div>
+    </header>
+
+    <!-- ================================
+         SCROLLSPY LATERAL (derecha)
+         ================================ -->
+    <aside class="scrollspy"> <!-- Marca la posición actual en las secciones -->
+      <ul> <!-- Lista de puntos clickeables -->
+        <li><a href="#hero" class="active"></a></li>     <!-- Punto para Hero, activo por defecto -->
+        <li><a href="#about"></a></li>                   <!-- Punto para About -->
+        <li><a href="#sectors"></a></li>                 <!-- Punto para Sectors -->
+        <li><a href="#catalog"></a></li>                 <!-- Punto para Catalog -->
+        <li><a href="#testimonials"></a></li>            <!-- Punto para Testimonials -->
+        <li><a href="#contact"></a></li>                 <!-- Punto para Contact -->
+      </ul>
+    </aside>
+
+    <!-- ================================
+         CONTENIDO PRINCIPAL (secciones)
+         ================================ -->
+<main class="content"> <!-- Contenedor de las secciones scrollables -->
+
+      <!-- 1. Sección HÉROE -->
+<section id="hero" class="section hero">
+  <div class="container hero-center">
+    <h1 class="hero-title-line1">Tu proveedor</h1>
+    
+    <div class="hero-visual">
+      <img src="https://raw.githubusercontent.com/Oscarmp7/landing-maranatha-assets/af0837dda45b4b434fcf78acfd7f9832b03fdadb/assets/images/undraw_delivery-truck_mjui.svg">
+      <h1 class="hero-title-behind">premium</h1>
+    </div>
+    
+    <p class="hero-subtitle">Distribución rápida, atención editorial y calidad insuperable.</p>
+    
+    <div class="btn-box">
+    <a href="#catalog">Ver Catálogo</a>
+  </div>
+  </div>
+</section>
+
+    <!-- ==================================
+            2. Sección QUIÉNES SOMOS 
+         ==================================-->
+<section id="about" class="section about">
+  <div class="container glass-about">
+    
+    <!-- Título -->
+    <h2 class="section-title">¿Quiénes Somos?</h2>
+    
+    <!-- Narrativa editorial -->
+    <p class="section-text">
+      En Suplidora Maranatha somos una empresa con más de 10 años de experiencia conectando empresas con soluciones útiles y confiables. Creemos en el <span>cumplimiento</span>, la <span>atención perfesonal</span> y en construir relaciones basadas en <span>confianza</span>.
+    </p>
+
+    <!-- Beneficios con microcopy -->
+    <div class="icons-grid">
+      <div class="icon-item">
+        <i class="fas fa-shipping-fast"></i>
+        <p>Entrega Express</p>
+        <small>Pedidos que llegan como deben.</small>
+      </div>
+      <div class="icon-item">
+        <i class="fas fa-user-check"></i>
+        <p>Atención Personalizada</p>
+        <small>Un equipo real, siempre disponible.</small>
+      </div>
+      <div class="icon-item">
+        <i class="fas fa-box-open"></i>
+        <p>Calidad Garantizada</p>
+        <small>Lo que pides, llega bien.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- =========================
+              3. Sección SECTORES
+           =========================-->
+<section id="sectors" class="section sectors">
+  <div class="container sectors-container">
+    <h2 class="section-title">Sectores que Atendemos</h2>
+    <p class="section-text">Conectamos soluciones con empresas de todos los tamaños. Estos son algunos de los sectores que ya confían en nosotros:</p>
+
+    <div class="sectors-grid">
+      <div class="sector-item"><i class="fas fa-car"></i><p>Automotriz</p></div>
+      <div class="sector-item"><i class="fas fa-wine-bottle"></i><p>Bebidas & Eventos</p></div>
+      <div class="sector-item"><i class="fas fa-bolt"></i><p>Eléctrico</p></div>
+      <div class="sector-item"><i class="fas fa-briefcase"></i><p>Empresarial</p></div>
+      <div class="sector-item"><i class="fas fa-flask"></i><p>Farmacéutico</p></div>
+      <div class="sector-item"><i class="fas fa-utensils"></i><p>Gastronómico</p></div>
+      <div class="sector-item"><i class="fas fa-church"></i><p>Iglesias</p></div>
+      <div class="sector-item"><i class="fas fa-gavel"></i><p>Legal & Notarial</p></div>
+      <div class="sector-item"><i class="fas fa-building"></i><p>Oficinas Corporativas</p></div>
+      <div class="sector-item upcoming">
+        <i class="fas fa-plus-circle"></i>
+        <p>Y muy pronto,<br><span>el tuyo</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!--==================================
+             4. Sección CATÁLOGO PREMIUM 
+          ==================================-->
+<section id="catalog" class="section">
+  <div class="container catalog-container">
+
+    <h2 class="section-title">Catálogo Premium</h2>
+    <p class="section-text">
+      Descarga nuestro catálogo con más de <strong>3,000 productos esenciales</strong> para empresas de todos los sectores.
+    </p>
+
+    <a href="https://heyzine.com/flip-book/e5be2225ab.html" class="btn btn-outline" download>
+      Explorar Catálogo
+    </a>
+    
+    <p class="section-hint">
+  ¿Tienes prisa? Te ayudamos a encontrarlo más rápido. <a href="#contact">Contáctanos</a>.
+    </p>
+
+    <div class="catalog-mockup">
+      <img src="https://raw.githubusercontent.com/Oscarmp7/landing-maranatha-assets/3eeda7cad616de1688a769622d6cb889801ca6ec/assets/images/Portada%20Brochure.png" alt="Mockup del Catálogo Premium">
+    </div>
+  </div>
+</section>
+
+
+      <!--==================================
+               5. Sección TESTIMONIOS 
+          ==================================-->
+<section id="testimonials" class="section testimonials">
+  <div class="container testimonials-container">
+    <h2 class="section-title">Testimonios</h2>
+    <div class="testimonials-grid">
+
+      <figure class="testimonial-item">
+        <blockquote>Desde que trabajamos con MaranaTha, la logística dejó de ser una preocupación.</blockquote>
+        <figcaption>— Logística Pérez</figcaption>
+      </figure>
+      
+      <figure class="testimonial-item">
+        <blockquote>Lo mejor no es solo que cumplen: es que te hacen sentir respaldado.</blockquote>
+        <figcaption>— Grupo Legal Montes</figcaption>
+      </figure>
+      
+      <figure class="testimonial-item">
+        <blockquote>Cuando llega un pedido de MaranaTha, sabemos que va a estar completo.</blockquote>
+        <figcaption>— Oficina Central Dominicana</figcaption>
+      </figure>
+      
+      <figure class="testimonial-item">
+        <blockquote>Trato humano, atención rápida y calidad que uno puede notar.</blockquote>
+        <figcaption>— Notaría Sánchez & Asoc.</figcaption>
+      </figure>
+      
+      <figure class="testimonial-item">
+        <blockquote>No recuerdo la última vez que revisamos un pedido. Siempre llega como debe.</blockquote>
+        <figcaption>— FarmaVital</figcaption>
+      </figure>
+      
+      <figure class="testimonial-item">
+        <blockquote>No solo entregan productos: entregan confianza.</blockquote>
+        <figcaption>— Almacenes Delta</figcaption>
+      </figure>
+      
+      <figure class="testimonial-item">
+        <blockquote>Hasta los detalles visuales reflejan lo que prometen: orden, claridad y sobre todo cumplimiento.</blockquote>
+        <figcaption>— Consultora Énfasis</figcaption>
+      </figure>
+      
+      <figure class="testimonial-item">
+        <blockquote>Cuando alguien te resuelve sin que tú tengas que insistir... eso vale oro.</blockquote>
+        <figcaption>— Inversiones TecnoPlus</figcaption>
+      
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================
+     6. SECCIÓN CONTACTO
+     ================================ -->
+<section id="contact" class="section">
+  
+  <h2 class="section-title">Contáctanos</h2>
+  <div class="contact-grid">
+
+    <!-- Formulario -->
+    <div class="form-glass">
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="message" rows="4" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+      </form>
+    </div>
+
+    <!-- Íconos de contacto directo -->
+    <div class="contact-social">
+      <p>¿Prefieres escribirnos directo? También estamos aquí:</p>
+      <div class="a-container">
+        <a href="mailto:ventas@suplidoramaranatha.com" title="Correo"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/18295713586" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/suplidoramaranatha" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="contact-info">
+        <p><i class="fas fa-phone-alt"></i>809-379-0106</p>
+        <p><i class="fas fa-envelope"></i> info@suplidoramaranatha.com</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    </main>
+
+    <!-- ================================
+         FOOTER Institucional
+         ================================ -->
+    <!-- ================================
+     7. SECCIÓN FOOTER PREMIUM
+     ================================ -->
+<footer class="footer">
+  <div class="footer-wrapper">
+    <div class="footer-brand">
+      <img
+        src="https://github.com/Oscarmp7/landing-maranatha-assets/blob/2b795d3cfe7cb584e8ec9d0c3a1c88dce1ecda69/assets/images/definitivo%20fondo%20oscuro%20(slogan).png?raw=true"
+        alt="Logo Suplidora MaranaTha"
+        class="footer-logo">
+      <p class="footer-tagline">En Dios creemos</p>
+      <p class="footer-line">Cumplimos porque creemos. Servimos porque confiamos.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Contacto</h4>
+        <p><i class="fas fa-phone-alt"></i> 809-379-0106</p>
+        <p><i class="fas fa-envelope"></i> info@suplidoramaranatha.com</p>
+      </div>
+      <div class="footer-column">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#about">¿Quiénes Somos?</a></li>
+          <li><a href="#sectors">Sectores</a></li>
+          <li><a href="#catalog">Catálogo</a></li>
+          <li><a href="#testimonials">Testimonios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="mailto:info@suplidoramaranatha.com" title="Correo"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/18295713586" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/suplidoramaranatha" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Suplidora de servicios y bienes Marana Tha. Todos los derechos reservados.</div>
+</footer>
+
+  </div> <!-- /page-grid -->
+
+  <!-- === ScrollReveal.js para animaciones suaves === -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- === JS principal === -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

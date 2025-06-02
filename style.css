@@ -1,0 +1,1037 @@
+/* ==========================================
+   Variables Globales (colores & tipografías)
+   ========================================== */
+html {
+  scroll-behavior: smooth;                    /* Scroll suave para todos los enlaces de ancla */
+}
+
+:root {
+  --blue-primary: #0A0A63;                    /* Azul institucional principal */
+  --blue-secondary: #1C1C9B;                  /* Azul secundario */
+  --white: #ffffff;                           /* Blanco puro */
+  --gray-light: #f5f5f5;                      /* Gris muy claro para fondos */
+  --font-body: 'Poppins', sans-serif;         /* Tipografía principal para cuerpo */
+  --font-title: 'Oswald', sans-serif;         /* Tipografía para títulos */
+}
+
+/* ==========================================
+   Reset y estilos base
+   ========================================== */
+* {
+  margin: 0;                                  /* Elimina margen por defecto */
+  padding: 0;                                 /* Elimina padding por defecto */
+  box-sizing: border-box;                     /* Incluye padding en ancho/alto */
+}
+body {
+  font-family: var(--font-body);              /* Aplica Poppins en todo el texto */
+  color: var(--blue-primary);                 /* Color de texto principal */
+  background: var(--white);                   /* Fondo blanco para toda la página */
+}
+
+/* ==========================================
+   Layout global con CSS Grid
+   ========================================== */
+.page-grid {
+  display: grid;                              /* Activa CSS Grid en el contenedor padre */
+  grid-template-areas:                        /* Define las áreas del grid por nombre */
+    "header header"                           /* Header ocupa dos columnas */
+    "aside content"                           /* Aside (scrollspy) + content (main) */
+    "footer footer";                          /* Footer ocupa dos columnas */
+  grid-template-columns: auto 1fr;            /* Columna aside de ancho automático, content flexible */
+  grid-template-rows: auto 1fr auto;          /* Filas header, contenido y footer */
+  min-height: 100vh;                          /* Al menos alto de la ventana */
+}
+
+/* Asignación de áreas */
+.page-grid > header  { grid-area: header; }   /* Header en área "header" */
+.page-grid > aside   { grid-area: aside; }    /* Aside (scrollspy) en área "aside" */
+.page-grid > main    { grid-area: content; }  /* Main (secciones) en área "content" */
+.page-grid > footer  { grid-area: footer; }   /* Footer en área "footer" */
+
+
+/* ==========================================
+   Contenedor central (.container)
+   ========================================== */
+.container {
+  width: 90%;                                 /* 90% del ancho de la pantalla */
+  max-width: 1100px;                          /* Máximo 1100px de ancho */
+  margin: 0 auto;                             /* Centrado horizontal */
+  text-align: center;                         /* Texto centrado */
+}
+
+/* ==========================================
+   NAVBAR (sticky + transparente)
+   ========================================== */
+.navbar {
+  position: fixed;
+  top: 20px;             /* Baja un poco del borde */
+  left: 50%;
+  transform: translateX(-50%);  /* Centrado horizontal */
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 2 rem;
+  background: rgba(255, 255, 255, 0.08);  /* Fondo semitransparente */
+  backdrop-filter: blur(12px);           /* Efecto glass */
+  border-radius: 16px;                   /* Bordes redondeados */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+  transition: background 0.4s, box-shadow 0.4s, backdrop-filter 0.4s;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Borde interior translúcido */
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 99, 0.89);  /* Un poco más fuerte al hacer scroll */
+  backdrop-filter: blur(3px);
+  box-shadow: 0 8px 40px rgba(10, 10, 99, 0.3);
+}
+.nav-container {
+  display: flex;                              /* Flexbox para alinear logo y menú */
+  align-items: center;                        /* Centrado vertical de items */
+  justify-content: space-between;             /* Espacio entre elementos */
+  padding: 1rem ;                            /* Espacio arriba y abajo */
+
+}
+
+/* Logo en navbar */
+.logo img {
+  max-height: 40px;                           /* Máxima altura para el logo */
+  width: auto;                                /* Proporción de ancho automática */
+}
+
+/* ==========================================
+   Hover dinámico para el logo del navbar
+   ========================================== */
+.logo img {
+  /* asegúrate de tener transición definida */
+  transition: transform .3s ease;
+  transform-origin: center;     /* escala desde el centro */
+}
+
+.logo img:hover {
+  transform: scale(1.1);        /* escala al 110% */
+}
+
+
+/* Enlaces de la navbar */
+.nav-links a {
+  margin-left: 1.5rem;                        /* Espacio a la izquierda de cada enlace */
+  text-decoration: none;                      /* Quita subrayado */
+  color: var(--white);                        /* Texto blanco */
+  font-weight: 700;                           /* Negrita */
+  position: relative;                         /* Para el pseudo-elemento ::after */
+}
+.nav-links a::after {
+  content: '';                                /* Pseudo-elemento vacío */
+  display: block; width: 0; height: 2px;      /* Inicialmente invisible */
+  background: var(--white);                   /* Línea blanca */
+  transition: width .3s;                      /* Animación de expansión */
+  position: absolute; bottom: -4px; left: 0;  /* Debajo del enlace */
+}
+.nav-links a:hover::after {
+  width: 100%;                                /* Expande al 100% en hover */
+}
+
+/* Botón hamburguesa (móvil) */
+.nav-toggle {
+  display: none;                              /* Oculto en escritorio */
+  background: none; border: none;             /* Sin estilo por defecto */
+  font-size: 1.5rem;                          /* Tamaño del icono */
+  color: var(--white);                 /* Icono azul primario */
+}
+
+
+
+/* ==========================================
+   SCROLLSPY LATERAL
+   ========================================== */
+.scrollspy {
+  position: fixed;                            /* Fijo en la pantalla */
+  top: 50%; right: 20px;                      /* Centrado vertical a 20px de la derecha */
+  transform: translateY(-50%);                /* Ajusta al punto medio */
+  z-index: 900;                               /* Debajo del navbar */
+}
+.scrollspy ul {
+  list-style: none;                           /* Quita viñetas de la lista */
+}
+
+/* Botones del scrollspy */
+.scrollspy a {
+  display: block; width: 14px; height: 14px;  /* Tamaño del punto */
+  margin: 8px 0;                              /* Separación vertical */
+  border: 2.5px solid var(--blue-primary);      /* Borde azul institucional */
+  background: var(--white);                   /* Fondo blanco */
+  border-radius: 50%;                         /* Círculo */
+  transition: background .3s, border-color .3s; /* Transición suave */
+}
+.scrollspy a.active,
+.scrollspy a:hover {
+  background: var(--blue-primary);            /* Relleno azul en activo/hover */
+  border-color: var(--white);                 /* Borde blanco para contraste */
+}
+
+/* ==========================================
+   Secciones comunes (.section)
+   ========================================== */
+.section {
+  padding: 100px 0;                           /* Espacio arriba y abajo */
+  min-height: 100vh;                          /* Al menos altura de la ventana */
+  display: flex;                              /* Flexbox para centrar vertical */
+  align-items: center;                        /* Alinea contenido al medio vertical */
+}
+.section-title {
+  font-family: var(--font-title);             /* Oswald para títulos */
+  font-size: 2.5rem;                          /* Tamaño grande */
+  margin-bottom: 1rem;                        /* Espacio inferior */
+  color: var(--blue-primary);                 /* Color azul primario */
+}
+.section-text {
+  font-size: 1rem;                            /* Tamaño de párrafo estándar */
+  margin-bottom: 2rem;                        /* Espacio inferior */
+  color: #333;                                /* Gris oscuro para texto */
+  line-height: 1.6;                           /* Altura de línea cómoda */
+}
+
+/* ==========================================
+   1. HERO
+   ========================================== */
+
+.hero {
+  position: relative;
+  color: var(--white);
+  background: var(--blue-primary); 
+  background-image: 
+    url("https://github.com/Oscarmp7/landing-maranatha-assets/blob/main/assets/images/FONDO%20PAGINA%20WEB4.png?raw=true"),
+    radial-gradient(circle at bottom center, rgba(51, 51, 150, 0.3) 0%, transparent 70%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.hero-title-line1 {
+  font-size: 3rem;
+  font-family: var(--font-title);
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.hero-visual {
+  position: relative;
+  width: auto;
+  max-width: 600px;
+  margin-top: 4rem;
+}
+
+.hero-visual img {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-title-behind {
+  position: absolute;
+  top: 3%; /* más abajo */
+  left: 50%;
+  transform: translate(-50%, -42%);
+  font-size: 20rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.11);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at bottom center, rgba(15,15,150,0.4) 0%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform-origin: bottom center;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Oscurece el fondo solo un poco */
+  z-index: 1;
+}
+
+
+.hero-title {
+  font-family: var(--font-title);             /* Oswald */
+  font-size: 3rem;                            /* Muy grande */
+  margin-bottom: .5rem;                      /* Espacio inferior */
+  color: var(--white);                       /* text color */
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;                          /* Subtítulo algo grande */ 
+  margin-bottom: 2rem;                      /* Espacio inferior */
+  color: var(--white);  
+}
+
+.hero-image img {
+  width: 100%;                /* Siempre ocupe el ancho disponible */
+  max-width: 650px;           /* Hasta 650px en pantallas grandes */
+  margin-top: 2rem;           /* Conserva separación con el texto */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    padding: 0.5rem;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    z-index: 1;
+    overflow: hidden;
+    transition: .1s;
+}
+
+.btn-box a:hover {
+    color: #0a0a63;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 1);
+    transform: scale(1.05);
+}
+
+.btn-box a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    transition: .2s;
+    z-index: -1;
+}
+
+.btn-box a:hover::after {
+    height: 100%;
+    transform: scale(1.05);
+}
+
+
+/* ==========================================
+   2. QUIÉNES SOMOS (icons grid)
+   ========================================== */
+
+.section-text span {
+  font-weight: 700;
+  color: #0A0A63;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 6rem;
+  height: 3px;
+  margin: 0.5rem auto 0;
+  background: var(--blue-primary);
+  border-radius: 4px;
+}
+
+.icons-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+
+.icon-item {
+  text-align: center;
+  max-width: 180px;
+}
+
+.icon-item i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--blue-primary);
+  transition: transform 0.3s ease;
+}
+
+.icon-item i:hover {
+  transform: translateY(-6px);
+}
+
+.icon-item p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blue-primary);
+  margin-bottom: 0.3rem;
+}
+
+.icon-item small {
+  display: block;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.glass-about {
+  background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+  backdrop-filter: blur(8px);            /* Suaviza el fondo */
+  -webkit-backdrop-filter: blur(8px);    /* Compatibilidad Safari */
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(10, 10, 99, 0.1); /* Azul institucional tenue */
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.about {
+  background-color: #fdfdfd;
+  background-image: radial-gradient(circle at 20% 30%, rgba(10,10,99,0.04) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 60%, rgba(10,10,99,0.04) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+/* ==========================================
+   3. SECTORES (grid adaptativo)
+   ========================================== */
+
+.sectors-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;  
+}
+
+.sector-item {
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #fff;
+  border: 1px solid rgba(10,10,99,0.1);
+  box-shadow: 0 0 0 transparent;
+  text-align: center;
+}
+
+.sector-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  background-color: #f9faff;
+}
+
+.sector-item i {
+  font-size: 2rem;
+  color: var(--blue-primary);
+  margin-bottom: 0.5rem;
+}
+
+.sector-item p {
+  font-size: 1rem;
+  color: var(--blue-primary);
+  font-weight: 600;
+}
+
+.sector-item.upcoming i {
+  animation: pulseIcon 2s infinite;
+}
+
+.sector-item.upcoming p {
+  color: #555;
+  font-weight: normal;
+}
+.sector-item.upcoming span {
+  font-weight: bold;
+  color: var(--blue-primary);
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+.section-text {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 1rem;
+  line-height: 1.7; /* mejora la legibilidad de dos líneas */
+}
+
+.section-title {
+  margin-top: 2rem;
+}
+
+
+
+/* ==========================================
+   4. CATÁLOGO (mockup)
+   ========================================== */
+
+.catalog-container {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.btn-outline {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--blue-primary);
+  color: var(--blue-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in;
+}
+
+.btn-outline:hover {
+  background: var(--blue-primary);
+  color: white;
+} 
+
+.section-hint {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
+.section-hint a {
+  color: var(--blue-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(10,10,99,0.2);
+  transition: color 0.5s ease;
+}
+
+.section-hint a:hover {
+  color: #000;
+}
+
+.catalog-mockup img {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: .3s ease-in;
+}
+
+.catalog-mockup img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ==========================================
+   5. TESTIMONIOS
+   ========================================== */
+.testimonials-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-height: auto;
+}
+
+.testimonial-item {
+  position: relative;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-item blockquote {
+  position: relative;
+  font-style: italic;
+  text-align: justify;
+  quotes: "“" "”";
+  padding: 1rem 1.5rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.testimonial-item blockquote::before {
+  content: open-quote;
+  font-size: 2.5rem;
+  color: var(--blue-primary);
+  position: absolute;
+  top: -0.5rem;
+  left: -0.3rem;
+  line-height: 1;
+}
+
+.testimonial-item blockquote::after {
+  content: close-quote;
+  font-size: 2.5rem;
+  color: var(--blue-primary);
+  position: absolute;
+  bottom: -0.5rem;
+  right: 1.2rem;
+  line-height: 1;
+}
+
+
+.testimonial-item figcaption {
+  margin-top: 1.5rem;
+  text-align: right;
+  font-weight: 600;
+  color: var(--blue-primary);
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================
+   6. CONTACTO (Glass Form Mejorado)
+   ========================================== */
+#contact {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('https://github.com/Oscarmp7/landing-maranatha-assets/blob/main/assets/images/PIE%20DE%20PAGINA.png?raw=true') no-repeat center center/cover;
+  padding: 100px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+
+.form-glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 0.5rem auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #0A0A63;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #666;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--blue-primary);
+  background: #fff;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background: var(--blue-primary);
+  color: white;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(10, 10, 99, 0.2);
+}
+
+/* SOCIAL / ICONOS */
+.contact-social {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 2rem;
+  margin: 0.5rem auto;
+  color: #0A0A63;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-social p,
+.contact-info p {
+  font-weight: 550;
+  font-size: 0.95rem;
+  color: #0A0A63;
+  margin-bottom: 0.8rem;
+}
+
+.contact-info i {
+  margin-right: 8px;
+  color: #0A0A63;
+}
+
+.a-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.a-container a {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 3px solid var(--blue-primary);
+  border-radius: 50%;
+  color: var(--blue-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  position: relative;
+  transition: transform 0.1s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.a-container a::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0%; height: 0%;
+  border-radius: 50%;
+  background: var(--blue-primary);
+  transition: 0.2s ease;
+  z-index: -1;
+}
+
+.a-container a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.a-container a:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================
+   7. FOOTER — Cierre editorial
+   ========================================== */
+.footer {
+  background: var(--blue-primary);
+  color: white;
+  padding: 4rem 2rem 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+.footer-brand {
+  flex: 1 1 250px;
+  text-align: center;
+}
+.footer-logo {
+  max-width: 120px;
+  margin-bottom: 0.75rem;
+}
+.footer-tagline {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.footer-line {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.footer-links {
+  flex: 2 1 600px;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+}
+.footer-column h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: white;
+  font-weight: 600;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-column ul li a:hover {
+  color: white;
+}
+.social-icons a {
+  margin-right: 0.6rem;
+  font-size: 1.3rem;
+  color: #ccc;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.social-icons a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+.footer-copy {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+
+/* ================================
+      MEDIA QUERIES - Responsive 
+   ================================ */
+
+/* 🔹 Máx 1200px (pantallas grandes tipo laptop angosta) */
+@media (max-width: 1200px) {
+  .navbar {
+    width: 98%;
+  }
+
+  .section {
+    padding: 80px 2rem;
+  }
+
+  .hero-text {
+    font-size: 2.2rem;
+  }
+
+  .hero-title-behind {
+    font-size: 14.5rem;
+  }
+}
+
+/* 🔹 Máx 992px (pantallas tipo tablet horizontal) */
+@media (max-width: 992px) {
+  
+  .nav-toggle {
+    display: block; /* Mostrar botón hamburguesa */
+    border:  1px solid var(--white);
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    background: rgba(10,10,99,0.95); /* Color institucional sobrio */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+    display: none; /* Oculto por defecto */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.open {
+    display: flex; /* Mostrar al hacer toggle */
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .scrollspy {
+    display: none;
+  }
+  
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .hero-title-behind {
+    font-size: 10rem;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-glass,
+  .contact-social {
+    width: 100%;
+  }
+}
+
+/* 🔹 Máx 768px (pantallas tipo tablet vertical) */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-text {
+    font-size: 1.9rem;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-logo {
+    max-width: 80px;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* 🔹 Máx 576px (smartphones) */
+@media (max-width: 576px) {
+  
+  .nav-links a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .hero-text {
+    font-size: 1.6rem;
+  }
+
+  .hero-title-behind {
+    font-size: 7rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .testimonial-item {
+    padding: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+  }
+
+  .a-container a {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
+  .form-glass,
+  .contact-social {
+    padding: 1.5rem;
+  }
+}
