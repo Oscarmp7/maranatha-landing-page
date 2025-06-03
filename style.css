@@ -205,7 +205,7 @@ body {
   color: var(--white);
   background: var(--blue-primary); 
   background-image: 
-    url("https://github.com/Oscarmp7/landing-maranatha-assets/blob/main/assets/images/FONDO%20PAGINA%20WEB4.png?raw=true"),
+    url("https://github.com/Oscarmp7/maranatha-landing-page/blob/main/assets/images/hero-bg.png?raw=true"),
     radial-gradient(circle at bottom center, rgba(51, 51, 150, 0.3) 0%, transparent 70%);
   background-size: cover;
   background-position: center;
@@ -651,7 +651,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('https://github.com/Oscarmp7/landing-maranatha-assets/blob/main/assets/images/PIE%20DE%20PAGINA.png?raw=true') no-repeat center center/cover;
+  background: url('https://raw.githubusercontent.com/Oscarmp7/maranatha-landing-page/main/assets/images/contact-bg.png') no-repeat center center/cover;
   padding: 100px 0;
 }
 
