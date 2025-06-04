@@ -74,7 +74,7 @@ body {
   width: 95%;
   max-width: 1200px;
   margin: 0 auto; 
-  padding: 0 2rem;
+  padding: 0 2 rem;
   background: rgba(255, 255, 255, 0.08);  /* Fondo semitransparente */
   backdrop-filter: blur(12px);           /* Efecto glass */
   border-radius: 16px;                   /* Bordes redondeados */
