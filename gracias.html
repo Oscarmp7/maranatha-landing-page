@@ -6,44 +6,90 @@
   <title>Mensaje enviado</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --blue-primary: #0A0A63;
+      --glass-white: rgba(255, 255, 255, 0.15);
+      --font-body: 'Poppins', sans-serif;
+      --font-title: 'Oswald', sans-serif;
+    }
+
     body {
-      background: #0A0A63;
+      background: linear-gradient(135deg, #0A0A63 0%, #1C1C9B 100%);
       color: white;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-body);
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      height: 100vh;
+      min-height: 100vh;
       padding: 2rem;
+      overflow: hidden;
     }
+
     .message-box {
-      max-width: 450px;
+      background: var(--glass-white);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      max-width: 480px;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.6s ease-out;
     }
+
     .message-box h1 {
-      font-size: 2rem;
+      font-family: var(--font-title);
+      font-size: 2.2rem;
       font-weight: 600;
       margin-bottom: 1rem;
+      color: #fff;
     }
+
     .message-box p {
       font-size: 1rem;
       opacity: 0.9;
+      margin-bottom: 2rem;
     }
+
     .message-box a {
       color: white;
-      background: transparent;
       border: 2px solid white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 6px;
-      display: inline-block;
-      margin-top: 2rem;
+      padding: 0.7rem 1.8rem;
+      border-radius: 8px;
       font-weight: 500;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
+
     .message-box a:hover {
       background: white;
-      color: #0A0A63;
-      transition: 0.3s ease;
+      color: var(--blue-primary);
+      box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .message-box {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .message-box h1 {
+        font-size: 1.8rem;
+      }
+
+      .message-box a {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
