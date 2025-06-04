@@ -893,18 +893,23 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1.2rem;
-    padding: 1.5rem 0;
-    display: none;
+    padding: 0;
+    display: flex;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     z-index: 999;
-    transition: all 0.3s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
   .nav-links.open {
-    display: flex;
+    padding: 1.5rem 0;
+    max-height: 500px;
+    opacity: 1;
   }
-
+   
   .nav-links a {
     margin: 0;
     font-size: 1rem;
