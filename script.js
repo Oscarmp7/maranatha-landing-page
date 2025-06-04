@@ -90,36 +90,3 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 
 sections.forEach(sec => observer.observe(sec));
-
-/* ======================================
-        5. POPUP GLASS CONFIRMATION
-   ====================================== */
-
-const form = document.querySelector('.contact-form');
-const popup = document.getElementById('popup-confirm');
-
-form.addEventListener('submit', async function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-
-  try {
-    await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    popup.classList.remove('popup-hidden');
-    form.reset(); // limpia el form después de enviar
-
-  } catch (error) {
-    alert('Ocurrió un error. Intenta de nuevo.');
-  }
-});
-
-function closePopup() {
-  popup.classList.add('popup-hidden');
-}
