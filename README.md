@@ -82,6 +82,7 @@ Cambios clave por breakpoint:
 - Menú se convierte en toggle
 - Grid del catálogo pasa de 2x4 a 1x8
 - Hero section y footer se reestructuran verticalmente
+- Optimizado para resoluciones desde 375px hasta escritorio full HD
 
 ---
 
