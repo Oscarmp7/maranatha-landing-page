@@ -49,7 +49,7 @@
             alt="Logo Suplidora MaranaTha"> <!-- Ruta al logo subido en GitHub -->
         </a>
         <!-- Enlaces de navegación -->
-        <nav class="nav-links"> <!-- Menú horizontal en escritorio -->
+        <nav id="primary-navigation" class="nav-links" aria-label="Navegación principal"> <!-- Menú horizontal en escritorio -->
           <a href="#hero">Inicio</a>         <!-- Enlace sección Hero -->
           <a href="#about">¿Quiénes Somos?</a> <!-- Enlace sección About -->
           <a href="#sectors">Sectores</a>    <!-- Enlace sección Sectors -->
@@ -58,7 +58,7 @@
           <a href="#contact">Contacto</a>    <!-- Enlace sección Contact -->
         </nav>
         <!-- Botón hamburguesa para móvil -->
-        <button class="nav-toggle"> <!-- Muestra/oculta menú en móviles -->
+        <button class="nav-toggle" aria-label="Menú" aria-controls="primary-navigation" aria-expanded="false"> <!-- Muestra/oculta menú en móviles -->
           <i class="fas fa-bars"></i>      <!-- Icono de tres rayas -->
         </button>
       </div>
@@ -67,14 +67,14 @@
     <!-- ================================
          SCROLLSPY LATERAL (derecha)
          ================================ -->
-    <aside class="scrollspy"> <!-- Marca la posición actual en las secciones -->
+    <aside class="scrollspy" aria-label="Indicador de sección"> <!-- Marca la posición actual en las secciones -->
       <ul> <!-- Lista de puntos clickeables -->
-        <li><a href="#hero" class="active"></a></li>     <!-- Punto para Hero, activo por defecto -->
-        <li><a href="#about"></a></li>                   <!-- Punto para About -->
-        <li><a href="#sectors"></a></li>                 <!-- Punto para Sectors -->
-        <li><a href="#catalog"></a></li>                 <!-- Punto para Catalog -->
-        <li><a href="#testimonials"></a></li>            <!-- Punto para Testimonials -->
-        <li><a href="#contact"></a></li>                 <!-- Punto para Contact -->
+        <li><a href="#hero" class="active" aria-label="Inicio" aria-current="true"></a></li>     <!-- Punto para Hero, activo por defecto -->
+        <li><a href="#about" aria-label="¿Quiénes Somos?"></a></li>                   <!-- Punto para About -->
+        <li><a href="#sectors" aria-label="Sectores"></a></li>                 <!-- Punto para Sectors -->
+        <li><a href="#catalog" aria-label="Catálogo"></a></li>                 <!-- Punto para Catalog -->
+        <li><a href="#testimonials" aria-label="Testimonios"></a></li>            <!-- Punto para Testimonials -->
+        <li><a href="#contact" aria-label="Contacto"></a></li>                 <!-- Punto para Contact -->
       </ul>
     </aside>
 
