@@ -1,0 +1,17 @@
+{
+  "name": "maranatha-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page oficial de Suplidora MaranaTha",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "parcel build style.css script.js --dist-dir dist --no-content-hash --no-source-maps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
