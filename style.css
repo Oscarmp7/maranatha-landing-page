@@ -1061,8 +1061,6 @@ body {
   }
 
   .page-grid {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 3rem;
@@ -1262,13 +1260,7 @@ body {
 
 /* ---------------------------------Max 375px--------------------------------- */
 @media (max-width: 375px) {
-  html, body {
-    overflow-x: hidden;
-  }
-
   .page-grid {
-    display: flex;
-    flex-direction: column;
     padding-inline: 1rem;
   }
 
@@ -1279,9 +1271,7 @@ body {
   }
 
   .hero-title-line1,
-  .section-title,
-  .hero-subtitle,
-  .section-text {
+  .section-title {
     text-align: center;
     font-size: 1rem;
   }
@@ -1294,7 +1284,6 @@ body {
   .testimonials-grid,
   .sectors-grid,
   .icons-grid,
-  .footer-wrapper,
   .contact-grid {
     display: flex;
     flex-direction: column;
@@ -1311,10 +1300,7 @@ body {
   }
 
   .footer-wrapper {
-    flex-direction: column;
-    align-items: center;
     gap: 1.5rem;
-    display: flex;
   }
 
   .footer-brand,
@@ -1331,11 +1317,5 @@ body {
   .footer-copy {
     font-size: 0.8rem;
     padding-top: 1rem;
-  }
-
-  .footer-links {
-    display: none;
-    margin: 0;
-    padding: 0;
   }
 }
