@@ -190,7 +190,7 @@ body {
   color: var(--blue-primary);                 /* Color azul primario */
 }
 .section-text {
-  font-size: 1rem;                            /* Tamaño de párrafo estándar */␊
+  font-size: 1rem;                            /* Tamaño de párrafo estándar */
   margin: 1rem 0 2rem;                        /* Separación superior e inferior */
   color: #444;                                /* Gris para texto principal */
   line-height: 1.7;                           /* Altura de línea cómoda */
@@ -1065,7 +1065,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 3rem;␊
+    gap: 3rem;
   }
 
   /* Hero Section */
