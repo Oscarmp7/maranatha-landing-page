@@ -13,12 +13,14 @@ window.addEventListener('scroll', () => {
 const toggleBtn = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 toggleBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+  const expanded = navLinks.classList.toggle('open');
+  toggleBtn.setAttribute('aria-expanded', expanded);
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
   });
 });
 
