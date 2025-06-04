@@ -4,11 +4,28 @@
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <title>Suplidora Maranatha</title> 
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Suplidora MaranaTha: Material gastable para empresas en RD. Atención confiable, entregas sin excusas y experiencia premium.">
+  <meta name="author" content="Suplidora MaranaTha">
+  <meta name="keywords" content="material de oficina, suplidora, cajas archivo muerto, cajas de pizza, soluciones empresariales, Santo Domingo, MaranaTha">
+
+  <!-- Open Graph (para redes sociales) -->
+  <meta property="og:title" content="Suplidora MaranaTha – Soluciones empresariales confiables">
+  <meta property="og:description" content="Conectando empresas con más de 3,000 soluciones en tus manos. Atención directa, entregas completas.">
+  <meta property="og:image" content="URL-DE-LA-IMAGEN-DESDE-GITHUB">
+  <meta property="og:url" content="https://www.suplidoramaranatha.com">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
   <!-- === Google Fonts: Oswald para títulos y Poppins para el cuerpo === -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  
   <!-- Favicon institucional -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
@@ -243,7 +260,6 @@
         <input type="email" name="email" placeholder="Correo electrónico" required>
         <textarea name="message" rows="4" placeholder="Tu mensaje" required></textarea>
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://suplidoramaranatha.com/gracias.html"> <!-- Mensaje de gracias redireccionado -->
         <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
       </form>
     </div>
@@ -316,5 +332,14 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <!-- === JS principal === -->
   <script src="script.js"></script>
+
+  <!-- POPUP DE CONFIRMACIÓN -->
+<div id="popup-confirm" class="popup-hidden">
+  <div class="popup-glass">
+    <p>¡Gracias por tu mensaje!<br>Te responderemos pronto.</p>
+    <button onclick="closePopup()">Cerrar</button>
+  </div>
+</div>
+
 </body>
 </html>
