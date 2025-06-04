@@ -190,12 +190,11 @@ body {
   color: var(--blue-primary);                 /* Color azul primario */
 }
 .section-text {
-  font-size: 1rem;                            /* Tamaño de párrafo estándar */
-  margin-bottom: 2rem;                        /* Espacio inferior */
-  color: #333;                                /* Gris oscuro para texto */
-  line-height: 1.6;                           /* Altura de línea cómoda */
+  font-size: 1rem;                            /* Tamaño de párrafo estándar */␊
+  margin: 1rem 0 2rem;                        /* Separación superior e inferior */
+  color: #444;                                /* Gris para texto principal */
+  line-height: 1.7;                           /* Altura de línea cómoda */
 }
-
 /* ==========================================
    1. HERO
    ========================================== */
@@ -493,19 +492,6 @@ body {
   0%, 100% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.2); opacity: 1; }
 }
-
-.section-text {
-  font-size: 1rem;
-  color: #444;
-  margin-top: 1rem;
-  line-height: 1.7; /* mejora la legibilidad de dos líneas */
-}
-
-.section-title {
-  margin-top: 2rem;
-}
-
-
 
 /* ==========================================
    4. CATÁLOGO (mockup)
@@ -882,17 +868,16 @@ body {
     font-size: 2.2rem;
   }
 
-  .hero-title-behind {
+.hero-title-behind {
     font-size: 14.5rem;
   }
 }
 
-/* ---------------------------------Máx 992px (pantallas tipo tablet horizontal)--------------------------------- */
-@media (max-width: 992px) {
-  
+/* ---------------------------------Nav hasta 1279px--------------------------------- */
+@media (max-width: 1279px) {
   .nav-toggle {
-    display: block; /* Mostrar botón hamburguesa */
-    border:  1px solid var(--white);
+    display: block;
+    border: 1px solid var(--white);
     border-radius: 8px;
     padding: 0.5rem;
   }
@@ -903,13 +888,13 @@ body {
     left: 0;
     right: 0;
     margin-top: 5px;
-    background: rgba(10,10,99,0.95); /* Color institucional sobrio */
+    background: rgba(10,10,99,0.95);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.2rem;
     padding: 1.5rem 0;
-    display: none; /* Oculto por defecto */
+    display: none;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     z-index: 999;
@@ -917,7 +902,7 @@ body {
   }
 
   .nav-links.open {
-    display: flex; /* Mostrar al hacer toggle */
+    display: flex;
   }
 
   .nav-links a {
@@ -928,8 +913,10 @@ body {
   .scrollspy {
     display: none;
   }
-  
+}
 
+/* ---------------------------------Máx 992px (pantallas tipo tablet horizontal)--------------------------------- */
+@media (max-width: 992px) {
   .hero {
     flex-direction: column;
     text-align: center;
@@ -959,53 +946,6 @@ body {
   .form-glass,
   .contact-social {
     width: 100%;
-  }
-}
-
-
-/* ---------------------------------Min 1024px- Max 1280 (IPAD PRO)--------------------------------- */
-@media (min-width: 1024px) and (max-width: 1279px) {
-    .nav-toggle {
-    display: block; /* Mostrar botón hamburguesa */
-    border:  1px solid var(--white);
-    border-radius: 8px;
-    padding: 0.5rem;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin-top: 5px;
-    background: rgba(10,10,99,0.95); /* Color institucional sobrio */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.2rem;
-    padding: 1.5rem 0;
-    display: none; /* Oculto por defecto */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    z-index: 999;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links.open {
-    display: flex; /* Mostrar al hacer toggle */
-  }
-
-  .nav-links a {
-    margin: 0;
-    font-size: 1rem;
-  }
-
-  .scrollspy {
-    display: none;
-  }
-
- .hero-title-behind {
-    font-size: 10rem;
   }
 }
 
