@@ -1061,9 +1061,11 @@ body {
   }
 
   .page-grid {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 3rem;
+    gap: 3rem;␊
   }
 
   /* Hero Section */
@@ -1093,7 +1095,8 @@ body {
   }
 
   .hero-visual img {
-    width: 140px;
+    width: 80%;
+    max-width: 220px;
     height: auto;
   }
 
