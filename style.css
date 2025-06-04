@@ -1106,7 +1106,7 @@ body {
   }
 
   /* Secciones */
-  section.section {
+  .section {
     padding: 3rem 1.2rem;
     text-align: center;
   }
