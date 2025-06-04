@@ -1262,7 +1262,26 @@ body {
 
 
 /* ---------------------------------Max 375px--------------------------------- */
+/* ---------------------------------Max 375px--------------------------------- */
 @media (max-width: 375px) {
+  
+  .section{
+    width: 100vw;
+  }
+
+  .logo img{
+    max-width: 150px;
+  }
+
+  .nav-container {
+    padding: 0.5rem;
+  }
+
+  .navbar {
+    width: 95%;
+    padding: 0.5rem 1rem;
+  }
+
   .page-grid {
     padding-inline: 1rem;
   }
@@ -1270,21 +1289,30 @@ body {
   .container {
     max-width: 100%;
     padding-inline: 1rem;
-    box-sizing: border-box;
   }
 
-  .hero-title-line1,
+  .hero-title-line1 {
+    margin: 0;
+  }
+
   .section-title {
     text-align: center;
     font-size: 1rem;
   }
+
   .hero-title-behind {
-    font-size: 4rem;
+    font-size: 4.2rem;
+    top: -20%;
   }
+
   .hero-visual img {
     width: 75%;
     max-width: 180px;
     height: auto;
+  }
+
+  .sector-item{
+    width: 100%;
   }
 
   .testimonials-grid,
