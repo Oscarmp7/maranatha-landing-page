@@ -23,6 +23,7 @@ html {
   margin: 0;                                  /* Elimina margen por defecto */
   padding: 0;                                 /* Elimina padding por defecto */
   box-sizing: border-box;                     /* Incluye padding en ancho/alto */
+  /* outline: 1px solid red; */
 }
 body {
   font-family: var(--font-body);              /* Aplica Poppins en todo el texto */
@@ -1053,6 +1054,7 @@ body {
 /* ---------------------------------Max 430px--------------------------------- */
 @media (max-width: 430px) {
   /* Estructura general */
+  
   html, body {
     width: 100%;
     overflow-x: hidden;
@@ -1065,7 +1067,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 3rem;
+    gap: 1rem;
   }
 
   /* Hero Section */
@@ -1082,10 +1084,16 @@ body {
 
   .hero-title-line1 {
     font-size: 2rem;
+    margin: 0;
+  }
+
+  .hero-center {
+    padding: 1rem;
   }
 
   .hero-title-behind {
-    font-size: 5rem;
+    font-size: 5.2rem;
+    top: -5%;
   }
 
   .hero-subtitle {
@@ -1093,10 +1101,14 @@ body {
     margin-top: 1rem;
     padding: 0 1rem;
   }
+  
+  .hero-visual {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
 
   .hero-visual img {
-    width: 80%;
-    max-width: 220px;
+    width: 100%;
     height: auto;
   }
 
@@ -1104,6 +1116,12 @@ body {
   .glass-about {
     padding-inline: 1.5rem;
   }
+
+  /* Sectors */
+
+  #sectors {
+  scroll-margin-top: 5rem;
+}
 
   /* Secciones */
   .section {
@@ -1126,6 +1144,11 @@ body {
   }
 
   /* Icon grid, testimonios, catálogo */
+
+  #testimonials {
+  scroll-margin-top: 5rem;
+}
+
   .icons-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -1169,6 +1192,11 @@ body {
   }
 
   /* Contacto */
+
+  #contact {
+  scroll-margin-top: 2rem;
+  }
+
   .contact-grid {
     padding: 1rem;
     display: flex;
@@ -1215,53 +1243,75 @@ body {
 
   /* Footer */
 
+  .footer {
+      padding: 1.5rem 1rem 1rem !important;
+      text-align: center;
+  }
+
   .footer-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.2rem;
+      display: block !important; /* el cambio clave */
+      padding: 0 !important;
+      margin: 0 !important;
   }
 
   .footer-brand {
-    order: -1;
+      min-height: auto !important;
+      height: auto !important;
   }
 
-  .footer {
-    text-align: center;
-    padding: 2rem 1rem;
+  .footer-brand p {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.2 !important;
   }
 
-  .footer-links {
-    display: none;
-    margin: 0;
-    padding: 0;
+  .footer-brand img {
+      margin: 0 auto !important;
+      display: block !important;
+      max-width: 100px !important;
+      margin-bottom: 0.5rem !important;
   }
 
   .footer-logo {
-    max-width: 100px;
+      max-width: 100px !important;
+      margin: 0 auto !important;
+  }
+
+  .footer-tagline,
+  .footer-line {
+      margin: 0 !important;
+      padding: 0 !important;
+  }
+
+  .footer-links {
+      display: none !important; /* ya con display: none es suficiente */
   }
 
   .footer-copy {
-    font-size: 0.8rem;
+      font-size: 0.8rem !important;
+      padding: 0 !important;
+      margin-top: 0.5rem !important;
   }
 
   .social-icons {
-    justify-content: center;
-    gap: 1rem;
+      justify-content: center !important;
+      gap: 1rem !important;
+      padding: 0 !important;
+      margin: 0 !important;
   }
 
   .social-icons a {
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
+      font-size: 1.2rem !important;
+      transition: transform 0.2s ease;
   }
 
   .social-icons a:hover {
-    transform: scale(1.15);
+      transform: scale(1.15);
   }
+
 }
 
 
-/* ---------------------------------Max 375px--------------------------------- */
 /* ---------------------------------Max 375px--------------------------------- */
 @media (max-width: 375px) {
   
@@ -1270,7 +1320,7 @@ body {
   }
 
   .logo img{
-    max-width: 150px;
+    max-width: 180px;
   }
 
   .nav-container {
@@ -1297,18 +1347,15 @@ body {
 
   .section-title {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-visual {
+    margin-bottom: 1rem;
   }
 
   .hero-title-behind {
-    font-size: 4.2rem;
-    top: -20%;
-  }
-
-  .hero-visual img {
-    width: 75%;
-    max-width: 180px;
-    height: auto;
+    font-size: 4.7rem;
   }
 
   .sector-item{
